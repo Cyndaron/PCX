@@ -4,12 +4,13 @@ declare(strict_types=1);
 
 namespace Cyndaron\PCX;
 
+use Cyndaron\BinaryHandler\BinaryReader;
 use GdImage;
 
 function imagecreatefrompcx(string $filename): GdImage
 {
-    $reader = \Cyndaron\BinaryHandler\BinaryReader::fromFile($filename);
+    $reader = BinaryReader::fromFile($filename);
 
-    $image = \RCTPHP\Util\PCX\PCXImage::fromReader($reader);
+    $image = PCXImage::fromReader($reader);
     return $image->exportAsGdImage();
 }

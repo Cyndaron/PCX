@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace RCTPHP\Util\PCX;
+namespace Cyndaron\PCX;
 
 enum PCXVersion : int
 {
